@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}{{ index_title }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ 'css/pure-min.css'|static_url(album) }}">
+  <link rel="stylesheet" href="{{ 'css/grids-responsive-min.css'|static_url(album) }}">
+  <link rel="stylesheet" href="{{ 'css/base.css'|static_url(album) }}">
+  {% block head %}
+  {% endblock %}
+  <style>
+  div.photo-card div.img {
+    height: {{ album|get_setting("photocardheight", "250px", settings) }};
+  }
+
+  div.photo-card div.img img {
+    object-fit: {{ album|get_setting("photocardfit", "cover", settings) }};
+  }
+
+  div.photo-row div.photo-left div.img {
+    height: {{ album|get_setting("photorowheight", "300px", settings) }};
+  }
+
+  div.photo-row div.photo-left div.img img {
+    object-fit: {{ album|get_setting("photorowfit", "cover", settings) }};
+  }
+  </style>
+</head>
+<body>
+  {% block body %}
+  {% endblock %}
+</body>
+</html>
+
