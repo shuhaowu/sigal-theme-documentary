@@ -1,6 +1,7 @@
-{# TODO: refactor obtaining the theme with some sort of function, but apparently that's not possible? #}
-{% if album.meta.get("theme", ["bookshelf"])[0] == "photojournal" %}
+{# TODO: refactor obtaining the theme with some sort of function, but apparently that's not possible because can't use filter in a comparison? #}
+
+{% if settings.get("albums", {}).get(album.name, {}).get("theme", "bookshelf") == "photojournal" %}
 {% extends "photojournal_album.html" %}
-{% elif album.meta.get("theme", ["bookshelf"])[0] == "bookshelf" %}
+{% elif settings.get("albums", {}).get(album.name, {}).get("theme", "bookshelf") == "bookshelf" %}
 {% extends "bookshelf_album.html" %}
 {% endif %}

@@ -1,4 +1,4 @@
-title = "Example"
+title = "Documentary Theme Example"
 source = "gallery"
 theme = ".."
 
@@ -32,3 +32,18 @@ plugins = [
 
 zip_gallery = "{album.name}.zip"
 # zip_media_format = "orig"
+
+albums = {
+  "photojournal": {
+    "title": "Photojournal demo gallery",
+    "description": "<p>This is the description text.</p>",
+    "theme": "photojournal",
+    "photorowheight": "400px",
+  },
+
+  "bookshelf": {
+    "title": "Bookshelf demo gallery",
+    "description": "<p>This is the description text.</p>",
+    "theme": "bookshelf",
+  },
+}

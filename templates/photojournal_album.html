@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-{{ album.title }} - {{ index_title }}
+{{ album|album_meta("title", settings) }} - {{ index_title }}
 {% endblock %}
 
 {% block head %}
@@ -12,12 +12,12 @@
 <div id="gallery">
   <div class="pure-g">
     <div class="pure-u-1 album-title">
-      <h1>{{ album.title }}</h1>
+      <h1>{{ album|album_meta("title", settings) }}</h1>
       {% if album.author %}
       <p class="album-author">{{ album.author }}</p>
       {% endif %}
 
-      {{ album.description }}
+      {{ album|album_meta("description", settings)|safe }}
     </div>
   </div>
 
@@ -41,19 +41,19 @@
   {% endfor %}
 
 
-<div class="pure-g">
-  <div class="pure-u-1">
-    <p style="text-align: center;">
-      <a href="..">Go back</a>
-      {% if album.zip %}
-      <br>
-      <a href="{{ album.zip }}">
-        ⭳ Download all ⭳
-      </a>
-      {% endif %}
-    </p>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <p style="text-align: center;">
+        <a href="..">Go back</a>
+        {% if album.zip %}
+        <br>
+        <a href="{{ album.zip }}">
+          ⭳ Download all ⭳
+        </a>
+        {% endif %}
+      </p>
+    </div>
   </div>
-</div>
 
 </div>
 
