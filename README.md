@@ -6,7 +6,7 @@ A [sigal](https://sigal.saimon.org/) theme based on [pure.css](https://purecss.i
 - `bookshelf` for a grid of photos
 - `photojournal` for rows of photos on the left and text to the right
 
-See [a demo here]().
+See [a demo here](https://shuhaowu.github.io/sigal-theme-documentary/).
 
 Custom configurations
 ---------------------
