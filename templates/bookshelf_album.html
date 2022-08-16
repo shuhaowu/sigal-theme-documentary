@@ -17,7 +17,9 @@
       <p class="album-author">{{ album.author }}</p>
       {% endif %}
 
-      {{ album|album_meta("description", settings)|safe }}
+      {% if album|album_meta("description", settings) %}
+        {{ album|album_meta("description", settings)|safe }}
+      {% endif %}
     </div>
   </div>
 
@@ -34,7 +36,9 @@
           </a>
         </div>
         <div id="caption-{{ media.src_filename.split(".")[0] }}">
-          {{ media.description }}
+          {% if media.description %}
+            {{ media.description }}
+          {% endif %}
         </div>
       </div>
     </div>

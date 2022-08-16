@@ -25,7 +25,9 @@
         </a>
       </div>
       <div id="caption-{{ alb.name }}">
-        {{ alb|album_meta("description", settings)|safe }}
+        {% if alb|album_meta("description", settings) %}
+          {{ alb|album_meta("description", settings)|safe }}
+        {% endif %}
       </div>
     </div>
   </div>

@@ -17,7 +17,9 @@
       <p class="album-author">{{ album.author }}</p>
       {% endif %}
 
-      {{ album|album_meta("description", settings)|safe }}
+      {% if album|album_meta("description", settings) %}
+        {{ album|album_meta("description", settings)|safe }}
+      {% endif %}
     </div>
   </div>
 
@@ -33,7 +35,9 @@
     <div class="photo-description pure-u-1 pure-u-md-2-3">
       <div class="caption-flex" id="caption-{{ media.src_filename.split(".")[0] }}">
         <div class="caption-no-flex">
-          {{ media.description }}
+          {% if media.description %}
+            {{ media.description }}
+          {% endif %}
         </div>
       </div>
     </div>
