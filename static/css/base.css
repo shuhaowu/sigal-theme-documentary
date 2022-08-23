@@ -1,28 +1,28 @@
-div#gallery {
+div.container {
   width: 95%;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  div#gallery {
+  div.container {
     max-width: 760px;
   }
 }
 
 @media (min-width: 992px) {
-  div#gallery {
+  div.container {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  div#gallery {
+  div.container {
     max-width: 1140px;
   }
 }
 
 @media (min-width: 1400px) {
-  div#gallery {
+  div.container {
     max-width: 1320px;
   }
 }

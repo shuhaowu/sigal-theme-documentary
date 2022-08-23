@@ -26,4 +26,3 @@ def static_url(url, album):
     url = f"../{url}"
 
   return url
-
