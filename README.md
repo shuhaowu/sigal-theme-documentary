@@ -57,6 +57,23 @@ albums = {
 
 The reason this is needed is because of https://github.com/saimn/sigal/issues/478. Once you put the album information in one place, you might as well put it all in the same place (which frankly I almost like better than the index.md).
 
+There are also additional variables that you must put into `sigal.conf.py` for generating a navbar:
+
+```python
+nav_bar = True
+
+# This generates title navbar with a "home button". This can be optional, in
+# which case the home button is not generated.
+homepage = {
+  # The text of the "home button".
+  "title": "My website", 
+
+  # The URL that the home button links to. Could be a relative or absolute path
+  # to the current website as well.
+  "url": "https://whatever", 
+}
+```
+
 Limitations
 -----------
 

@@ -117,6 +117,13 @@ div.photo-row div.photo-description div.caption-no-flex {
 }
 
 /* Make the pure menu a bit smaller */
+
+nav {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #ccffb5;
+}
+
 nav li.pure-menu-item a.pure-menu-link {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
@@ -131,12 +138,16 @@ nav a.pure-menu-link {
   color: #785def;
   text-decoration: underline;
   text-decoration-style: dotted;
+  border: 1px solid #ccffb5;
 }
 
 nav a.pure-menu-link:hover {
+  background-color: #ccffb5;
   color: #5838ea;
+  border: 1px dashed #5838ea;
 }
 
 nav a.pure-menu-link.selected {
-  background-color: #EEE;
+  /* background-color: #B5E4FF; */
+  border: 1px solid #5838ea;
 }

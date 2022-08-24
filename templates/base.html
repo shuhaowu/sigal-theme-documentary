@@ -29,6 +29,25 @@
   </style>
 </head>
 <body>
+
+  {% if settings.nav_bar %}
+    <nav>
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+        {% if settings.homepage %}
+        <a href="{{ settings.homepage['url'] }}" class="pure-menu-link pure-menu-heading">{{ settings.homepage.get('title', "Home") }}</a>
+        {% endif %}
+
+        <ul class="pure-menu-list">
+          {% for album_name, alb in settings.albums.items() %}
+          <li class="pure-menu-item">
+            <a href="{% if album.name != "." %}../{% endif %}{{ album_name }}" class="pure-menu-link{% if album_name == album.name %} selected{% endif %}">{{ alb["title"] }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  {% endif %}
+
   {% block body %}
   {% endblock %}
 </body>

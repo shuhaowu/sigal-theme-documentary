@@ -33,6 +33,13 @@ plugins = [
 zip_gallery = "{album.name}.zip"
 # zip_media_format = "orig"
 
+nav_bar = True
+
+homepage = {
+  "title": "Home",
+  "url": "/",
+}
+
 albums = {
   "photojournal": {
     "title": "Photojournal demo gallery",
