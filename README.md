@@ -62,6 +62,8 @@ There are also additional variables that you must put into `sigal.conf.py` for g
 ```python
 nav_bar = True
 
+nav_bar_color = "#123456" # The background color of the navbar
+
 # This generates title navbar with a "home button". This can be optional, in
 # which case the home button is not generated.
 homepage = {

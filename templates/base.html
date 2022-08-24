@@ -26,6 +26,14 @@
   div.photo-row div.photo-left div.img img {
     object-fit: {{ album|get_setting("photorowfit", "cover", settings) }};
   }
+
+  nav, nav a.pure-menu-link:hover, nav a.pure-menu-link:focus {
+    background-color: {{ settings.nav_bar_color or "#dfe7ff" }};
+  }
+
+  nav a.pure-menu-link {
+    border: 1px solid {{ settings.nav_bar_color or "#dfe7ff" }};
+  }
   </style>
 </head>
 <body>
