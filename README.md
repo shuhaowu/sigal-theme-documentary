@@ -23,6 +23,9 @@ albums = {
     # Could be photojournal or bookshelf
     "theme": "bookshelf",
 
+    # Shows the title above each photo in bookshelf theme or not
+    "showphototitle": True,
+
     # The height of the photocard <img>, which are the grid of photos in bookshelf
     # subtheme and the album index page (album_list.html)
     "photocardheight": "250px",

@@ -2,7 +2,9 @@
   {% for media in album.medias %}
   <div class="pure-u-1 pure-u-sm-{{ album|get_setting("photocardsmfrac", "1-2", settings) }} pure-u-md-{{ album|get_setting("photocardmdfrac", "1-3", settings) }} pure-u-lg-{{ album|get_setting("photocardlgfrac", "1-4", settings) }}">
     <div class="photo-card">
+      {% if settings.get("albums", {}).get(album.name, {}).get("showphototitle", True) %}
       <h1>{{ media.title }}</h1>
+      {% endif %}
       <div class="img">
         <a href="{{ media.url }}" data-sub-html="#caption-{{ media.src_filename.split(".")[0] }}" title="{{ media.title }}">
           <img src="{{ media.thumbnail }}">
