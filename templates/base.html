@@ -40,7 +40,7 @@
 
   {% if settings.nav_bar %}
     <nav>
-      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable" style="overflow-x:scroll !important;">
         {% if settings.homepage %}
         <a href="{{ settings.homepage['url'] }}" class="pure-menu-link pure-menu-heading">{{ settings.homepage.get('title', "Home") }}</a>
         {% endif %}

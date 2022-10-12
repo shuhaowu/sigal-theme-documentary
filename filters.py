@@ -13,6 +13,22 @@ def get_setting(album, name, default_value, settings):
 def album_meta(album, name, settings):
   return settings.get("albums", {}).get(album.name, {}).get(name)
 
+def previous_link(album, settings):
+  keys = list(settings.get("albums", {}).keys())
+  idx = keys.index(album.name)
+  if idx == 0:
+    return "&#8592; Previous album"
+
+  return '<a href="../{}">&#8592; Previous album</a>'.format(keys[idx - 1])
+
+def next_link(album, settings):
+  keys = list(settings.get("albums", {}).keys())
+  idx = keys.index(album.name)
+  if idx >= len(settings.get("albums", {})) - 1:
+    return "Next album &#8594;"
+
+  return '<a href="../{}">Next album &#8594;</a>'.format(keys[idx + 1])
+
 def static_url(url, album):
   """
   This takes an album and attempts to get a linkable url to a static file.

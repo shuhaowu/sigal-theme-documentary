@@ -37,14 +37,28 @@
   <div class="pure-g">
     <div class="pure-u-1">
       <p style="text-align: center;">
+        {% if settings.get("show_prev_next_album") %}
+          {{ album|previous_link(settings)|safe }}
+
+          &#9679;
+        {% endif %}
+
         <a href="..">Go back</a>
-        {% if album.zip %}
-        <br>
-        <a href="{{ album.zip }}">
-          ⭳ Download all ⭳
-        </a>
+
+        {% if settings.get("show_prev_next_album") %}
+          &#9679;
+
+          {{ album|next_link(settings)|safe }}
         {% endif %}
       </p>
+
+      {% if album.zip %}
+      <p style="text-align: center;">
+        <a href="{{ album.zip }}">
+          {{ settings.get("download_zip_title", "⭳ Download all ⭳") }}
+        </a>
+      </p>
+      {% endif %}
     </div>
   </div>
 </div>
