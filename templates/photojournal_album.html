@@ -10,8 +10,18 @@
   <div class="photo-description pure-u-1 pure-u-md-2-3">
     <div class="caption-flex" id="caption-{{ media.src_filename.split(".")[0] }}">
       <div class="caption-no-flex">
+        {# Don't display the title if it is using the default value which is the filename #}
+        {% if media.title and media.title not in media.src_filename %}
+        <p style="font-size: 1.1rem;"><strong>{{ media.title }}</strong></p>
+        {% endif %}
+
+        {# because sigal won't convert the exif description into markdown #}
         {% if media.description %}
-          {{ media.description }}
+          {% if media.raw_exif and media.raw_exif.get("ImageDescription") == media.description %}
+            {{ media.description|to_markdown|safe }}
+          {% else %}
+            {{ media.description }}
+          {% endif %}
         {% endif %}
       </div>
     </div>

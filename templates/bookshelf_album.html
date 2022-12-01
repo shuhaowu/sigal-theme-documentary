@@ -11,8 +11,13 @@
         </a>
       </div>
       <div id="caption-{{ media.src_filename.split(".")[0] }}">
+        {# because sigal won't convert the exif description into markdown #}
         {% if media.description %}
-          {{ media.description }}
+          {% if media.raw_exif and media.raw_exif.get("ImageDescription") == media.description %}
+            {{ media.description|to_markdown|safe }}
+          {% else %}
+            {{ media.description }}
+          {% endif %}
         {% endif %}
       </div>
     </div>

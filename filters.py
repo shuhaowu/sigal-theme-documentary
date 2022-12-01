@@ -1,3 +1,5 @@
+import markdown
+
 def get_setting(album, name, default_value, settings):
   # Attempt to find a global default
   value = settings.get(name, [default_value])[0]
@@ -12,6 +14,9 @@ def get_setting(album, name, default_value, settings):
 
 def album_meta(album, name, settings):
   return settings.get("albums", {}).get(album.name, {}).get(name)
+
+def to_markdown(s):
+  return markdown.markdown(s)
 
 def previous_link(album, settings):
   keys = list(settings.get("albums", {}).keys())
