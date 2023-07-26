@@ -43,7 +43,9 @@
           &#9679;
         {% endif %}
 
-        <a href="..">Go back</a>
+        {% if settings.get("show_go_back_link", True) %}
+          <a href="..">Go back</a>
+        {% endif %}
 
         {% if settings.get("show_prev_next_album") %}
           &#9679;
