@@ -69,6 +69,11 @@
 <script>
   lightGallery(document.getElementById("gallery"), {
     selector: ".img a",
+    mobileSettings: {
+      controls: false,
+      showCloseIcon: true,
+      download: true,
+    }
   });
 </script>
 {% endblock %}
